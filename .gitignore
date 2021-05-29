@@ -35,5 +35,5 @@ Desktop.ini
 *.DS_Store
 **/*.AppleDouble
 .gitsecret/keys/random_seed
-!*.secret
+.env
 random_seed
