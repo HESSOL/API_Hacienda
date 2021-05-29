@@ -25,19 +25,19 @@ global $config;
 #
 #####################################################################################
 # Database name
-$config['db']['name'] = "testdb";
+$config['db']['name'] = getenv('DB_NAME');
 # Database password
-$config['db']['pwd'] = "testpassword";
+$config['db']['pwd'] = getenv('DB_PASSWORD');
 # Database user name
-$config['db']['user'] = "testuser";
+$config['db']['user'] = getenv('DB_USERNAME');
 # Database host
-$config['db']['host'] = "mariadb";
+$config['db']['host'] = getenv('DB_HOST');
 ##############################################################################
 #
 # Crypto Keys
 #
 ##############################################################################
-$config['crypto']['key'] = "base64:0APSnc23zo2ourXY5qNVqLBovFXosh+n1ZlDSU364Jg=";
+$config['crypto']['key'] = getenv('cryptoKey');
 ##############################################################################
 #
 # print alerts
@@ -84,20 +84,20 @@ $config['mail']['port']         = getenv('mail_port_587');
 
 # The core installation: This is probably the only one you need to touch
 # IMPORTANTE: La ruta debe finalizar en "/".
-$config['modules']['coreInstall'] = "../api/";
+$config['modules']['coreInstall'] = getenv('core_install');
 
 # Name of your site, Not in use really
-$config['core']['siteName'] = "facturadorCR";
+$config['core']['siteName'] = getenv('core_siteName');
 
 # The host name for your site
-$config['core']['host'] = "TESTHOST";
+$config['core']['host'] = getenv('core_host');
 $config['core']['compannyIMG'] = getenv('corp_url_img');
 
 # Time in seconds for the lifetime of a session, after this time, the user must
 # log back in, if you dont want to use the session life set the value in -1, li this
 #  $config['users']['sessionLifetime'] = -1;
 
-$config['users']['sessionLifetime'] = -1;
+$config['users']['sessionLifetime'] = getenv('sessionLifetime');
 
 /*******************************************************************************
  * You should not need to touch anything beyond this point
