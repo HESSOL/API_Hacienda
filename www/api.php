@@ -21,7 +21,7 @@
  */
 
 error_reporting(E_ALL);
-ini_set("display_errors", 1);
+ini_set("display_errors", 0);
 
 // Cambiamos zona horaria a Costa Rica
 date_default_timezone_set("America/Costa_Rica");
@@ -69,7 +69,7 @@ else if (file_get_contents("php://input") !== null)
     else
     {
         grace_error("File Content Input: ". $content);
-        die("La informacion json enviada contiene errores.");
+        die("La informacion json enviada contiene errores.". $content);
     }
 }
 else if (isset($argv))
